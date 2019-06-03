@@ -1,6 +1,6 @@
 # RemoteAudioElement
 
-这是一个为 Node.js 提供 HTMLAudioElement 接口的库
+这是一个为 Node.js 提供 HTMLAudioElement 接口的包
 
 *Powered by Puppeteer & Headless Chrome*
 
@@ -60,7 +60,7 @@ const Audio = require('remote-audio-element')
 
 ### Extra
 
-set / get properties 以及 apply methods 均为 `Promise`，需要 `await` 等待调用完成；add Event Listener 不需要
+set / get properties 以及 apply methods 均为 `Promise`，需要 `await` 等待调用完成；add event listener 不需要
 
 因事件监听需要获得实时状态等不及 `await` 而做了优化，监听的事件的 event 接口已包含 audio 的所有属性值
 
@@ -75,3 +75,7 @@ set / get properties 以及 apply methods 均为 `Promise`，需要 `await` 等�
 - [GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement
 - https://www.w3schools.com/tags/ref_av_dom.asp
+
+## License
+
+MIT
