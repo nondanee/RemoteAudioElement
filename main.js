@@ -11,7 +11,7 @@ module.exports = function (url) {
 			// headless: false,
 			ignoreDefaultArgs: ['--mute-audio'],
 			args: ['--autoplay-policy=no-user-gesture-required'],
-			executablePath: 
+			executablePath:
 				process.env.PUPPETEER_EXECUTABLE_PATH ||
 				{win32: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', darwin: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}[process.platform] ||
 				'chrome'
@@ -22,7 +22,7 @@ module.exports = function (url) {
 		await page.exposeFunction('emitter', (type, data) => emitter.emit(type, data))
 		
 		const audioHandle = await page.evaluateHandle(url => (new Audio(url)), url)
-		const dumpHandle = await page.evaluateHandle(() => value => 
+		const dumpHandle = await page.evaluateHandle(() => value =>
 			value instanceof TimeRanges ?
 			Array.from(Array(value.length).keys()).map(index => ({
 				start: value.start(index), end: value.end(index)
