@@ -32,7 +32,7 @@ const Audio = require('remote-audio-element')
 		console.log('duration', info.duration)
 	})
 
-	audio.on('end', () => {
+	audio.on('ended', () => {
 		audio.dispose()
 	})
 

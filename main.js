@@ -38,7 +38,7 @@ module.exports = function (url) {
 			get: (target, key) => {
 				// console.log('get', key)
 				if(key === 'dispose')
-					return async () => await browser.close()
+					return async () => await page.close()
 				else if(key in emitter)
 					return emitter[key]
 				else if(['addEventListener', 'removeEventListener'].includes(key))
